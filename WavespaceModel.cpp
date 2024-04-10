@@ -48,6 +48,10 @@ void WavespaceModel::setNewWaveform(ConditionData conditionData, std::array<floa
 
     std::array<float, SIZE_WAVEFORM*2> fftArray;
     performIFFT(mFFT, ampArray, phaseArray, fftArray);
+    float ampOverall = 0.0f;
     for(int i=0; i<SIZE_WAVEFORM; i++)
-        waveform[i] = fftArray[i];
+        ampOverall += fftArray[i] * fftArray[i];
+    ampOverall = sqrt(ampOverall);
+    for(int i=0; i<SIZE_WAVEFORM; i++)
+        waveform[i] = fftArray[i] / ampOverall;
 }
