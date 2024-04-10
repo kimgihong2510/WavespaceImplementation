@@ -17,7 +17,7 @@ Ensure that you have JUCE and CMake installed on your system.
 4) Follow the instructions provided in the link above.
 5) Create a 'build' directory in the root: **mkdir ./build**.
 6) Navigate to the build directory: **cd ./build**.
-7) If you are compiling in an environment other than macOS-arm, ensure to adjust line 137 accordingly.
+7) If you are compiling in an environment other than macOS-arm, ensure to adjust line 137 in ./CMakeLists.txt accordingly.
 8) Generate the necessary build files: **cmake ..**.
 9) Compile the virtual instrument: **make**.
 
